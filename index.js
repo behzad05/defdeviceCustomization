@@ -1,4 +1,4 @@
-console.log("test 21")
+console.log("test 21");
 (function () {
     // Function to hide all target elements when they appear
     function hideTargetElements() {
