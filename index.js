@@ -5,7 +5,7 @@ console.log("test 24");
         console.log("function ran")
         const selectors = [
             "#main-app > div > div > div > div > div.grid.grid-cols-2.lg\\:grid-cols-4.gap-3.mb-6 > div:nth-child(1)",
-            "#main-app > div > div > div > div > div.grid.grid-cols-2.lg\\:grid-cols-4.gap-3.mb-6 > div:nth-child(1)"
+            "#main-app > div > div > div > div > div.grid.grid-cols-2.lg\\:grid-cols-4.gap-3.mb-6"
         ];
 
         selectors.forEach((selector, index) => {
