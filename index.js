@@ -1,11 +1,11 @@
-console.log("test 25");
+console.log("test 26");
 (function () {
     // Function to hide all target elements when they appear
     function hideTargetElements() {
         console.log("function ran")
         const selectors = [
             "#main-app > div > div > div > div > div.grid.grid-cols-2.lg\\:grid-cols-4.gap-3.mb-6 > div:nth-child(1)",
-            "#main-app > div > div > div > div > div.grid.grid-cols-2.lg\\:grid-cols-4.gap-3.mb-6"
+            ".hl-statistic"
         ];
 
         selectors.forEach((selector, index) => {
