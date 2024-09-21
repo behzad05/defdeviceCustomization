@@ -1,8 +1,9 @@
-console.log("test 22");
+console.log("test 23");
 (function () {
     // Function to hide all target elements when they appear
     function hideTargetElements() {
         const selectors = [
+            "#main-app > div > div > div > div > div.grid.grid-cols-2.lg\\:grid-cols-4.gap-3.mb-6 > div:nth-child(1)",
             "#main-app > div > div > div > div > div.grid.grid-cols-2.lg\\:grid-cols-4.gap-3.mb-6 > div:nth-child(1)"
         ];
 
@@ -31,5 +32,5 @@ console.log("test 22");
     });
 
     // Run the function once initially in case the elements are already present
-    hideTargetElements();
+    setInterval(hideTargetElements, 2000);
 })();
