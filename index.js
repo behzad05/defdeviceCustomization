@@ -1,4 +1,4 @@
-console.log("test 27");
+console.log("test 28");
 // Function to hide all target elements when they appear
 function hideTargetElements(selectors) {
     selectors.forEach((selector) => {
@@ -14,8 +14,7 @@ function hideTargetElements(selectors) {
 
 // Array of selectors for elements to hide
 const selectorsToHide = [
-    "#main-app > div > div > div > div > div.grid.grid-cols-2.lg\\:grid-cols-4.gap-3.mb-6",
-    "#main-app > div > div > div > div > div.grid.grid-cols-2.lg\\:grid-cols-4.gap-3.mb-6 > div:nth-child(1)"
+    "#sb_launchpad"
 ];
 
 // Function to initialize MutationObserver and watch for changes in the DOM
