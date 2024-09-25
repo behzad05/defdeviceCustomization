@@ -1,26 +1,42 @@
-console.log("test 26");
-(function () {
-    // Function to hide all target elements when they appear
-    function hideTargetElements() {
-        console.log("function ran")
-        const selectors = [
-            "#main-app > div > div > div > div > div.grid.grid-cols-2.lg\\:grid-cols-4.gap-3.mb-6 > div:nth-child(1)",
-            ".hl-statistic"
-        ];
+console.log("test 27");
+// Function to hide all target elements when they appear
+function hideTargetElements(selectors) {
+    selectors.forEach((selector) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.style.display = "none"; // Hide the element
+            console.log(`Element with selector "${selector}" hidden successfully.`);
+        } else {
+            console.log(`Element with selector "${selector}" not found.`);
+        }
+    });
+}
 
-        selectors.forEach((selector, index) => {
-            const element = document.querySelector(selector);
-            if (element) {
-                element.style.display = "none";  // Hide the element
-                console.log(`Element ${index + 1} hidden successfully`);
-            } else {
-                console.log(`Element ${index + 1} not found.`);
-            }
+// Array of selectors for elements to hide
+const selectorsToHide = [
+    "#main-app > div > div > div > div > div.grid.grid-cols-2.lg\\:grid-cols-4.gap-3.mb-6",
+    "#main-app > div > div > div > div > div.grid.grid-cols-2.lg\\:grid-cols-4.gap-3.mb-6 > div:nth-child(1)"
+];
+
+// Function to initialize MutationObserver and watch for changes in the DOM
+function observeDomChangesAndHideElements(selectors) {
+    // Create a Mutation Observer to watch for changes in the DOM
+    const observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function () {
+            hideTargetElements(selectors); // Call the function to hide elements whenever there's a change in the DOM
         });
-    }
+    });
 
-
+    // Start observing the body for changes in child elements
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+    });
 
     // Run the function once initially in case the elements are already present
-    setInterval(hideTargetElements, 2000);
-})();
+    hideTargetElements(selectors);
+    console.log("Observer initialized, watching for DOM changes to hide elements.");
+}
+
+// Call the function to observe and hide elements
+observeDomChangesAndHideElements(selectorsToHide);
