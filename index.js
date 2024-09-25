@@ -14,8 +14,7 @@ function hideTargetElements(selectors) {
 
 // Array of selectors for elements to hide
 const selectorsToHide = [
-    "#sb_launchpad",
-    ".hl-statistic"
+    
 ];
 
 // Function to initialize MutationObserver and watch for changes in the DOM
